@@ -1,36 +1,53 @@
 <html>
 <title> json geo ip  </title>
 <script>
-var _data;  //data json
-var i=0;    // iteration
-var st;     // string
-function loadJSON(file, callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.withCredentials = true;
-    xobj.overrideMimeType("application/json");
-    xobj.createCORSRequest('GET', file, true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);
- }
-function load()
-{
-   loadJSON("https://freegeoip.net/jsonp/", function(response)
-   {
-        //alert(response);
-         _data = JSON.parse(response); //eval('(' +response+')')
-     
-          });
+    
+// Create the XHR object.
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
 }
-load();
- </script>
 
-<script>
-    document.write(_data.ip)
+// Helper method to parse the title tag from the response.
+function getTitle(text) {
+  return text.match('<title>(.*)?</title>')[1];
+}
+
+// Make the actual CORS request.
+function makeCorsRequest() {
+  // This is a sample server that supports CORS.
+  var url = 'https://freegeoip.net/jsonp/';
+
+  var xhr = createCORSRequest('GET', url);
+  if (!xhr) {
+    alert('CORS not supported');
+    return;
+  }
+
+  // Response handlers.
+  xhr.onload = function() {
+    var text = xhr.responseText;
+    var title = getTitle(text);
+    alert('Response from CORS request to ' + url + ': ' + title);
+  };
+
+  xhr.onerror = function() {
+    alert('Woops, there was an error making the request.');
+  };
+
+  xhr.send();
+}
 </script> 
 
 
