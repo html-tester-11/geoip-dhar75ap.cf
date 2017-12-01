@@ -1,36 +1,23 @@
 <html>
-<title> json geo ip  </title>
+<title> geo ip  </title>
 <script>
-var _data;  //data json
-var i=0;    // iteration
-var st;     // string
-function loadJSON(file, callback) {
-    var xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', file, false); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-          if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-          }
-    };
-    xobj.send(null);
- }
-function load()
+var json = function (_data)
 {
-   loadJSON("https://freegeoip.net/jsonp/", function(response)
-   {
-        //alert(response);
-         _data = JSON.parse(response); //eval('(' +response+')')
-     
-          });
-}
-load();
- </script>
-
-<script>
-    document.write(_data.ip)
-</script> 
-
-
+ document.write(_data.ip+"<br>");
+  document.write(_data.country_code+"<br>");
+                 document.write(_data.country_name+"<br>");
+                 document.write(_data.region_code+"<br>");
+                 document.write(_data.region_name+"<br>");
+                 document.write(_data.city+"<br>");
+                 document.write(_data.zip_code+"<br>");
+                 document.write(_data.time_zone+"<br>");
+                 document.write(_data.latitude+"<br>");
+                 document.write(_data.longitude+"<br>");
+                 document.write(_data.metro_code+"<br>");
+ //document.getElementById("p1").innerHTML = _data.IP;
+};
+ </script> 
+<div id='json'></div>
+<script src='https://freegeoip.net/json/?callback=json'></script>
 </html>
+
