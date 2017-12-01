@@ -30,6 +30,8 @@ function makeCorsRequest() {
   var url = 'https://freegeoip.net/jsonp/';
 
   var xhr = createCORSRequest('GET', url);
+    xhr.setRequestHeader(
+    'X-Custom-Header', 'value');
   if (!xhr) {
     alert('CORS not supported');
     return;
