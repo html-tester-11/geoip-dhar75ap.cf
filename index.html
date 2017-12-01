@@ -18,7 +18,7 @@ function loadJSON(file, callback) {
  }
 function load()
 {
-   loadJSON("'https://freegeoip.net/jsonp/", function(response)
+   loadJSON("https://freegeoip.net/jsonp/", function(response)
    {
         //alert(response);
          _data = JSON.parse(response); //eval('(' +response+')')
@@ -29,6 +29,7 @@ load();
  </script>
 
 <script>
+    document.write(_data.ip)
 </script> 
 
 
