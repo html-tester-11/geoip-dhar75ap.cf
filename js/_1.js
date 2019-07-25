@@ -30,6 +30,6 @@ _a+=" EU country :  "+_data.location.is_eu+"<br>";
 
 document.write(_a);
 
-b(_data)
+b(_data);
 
 }
