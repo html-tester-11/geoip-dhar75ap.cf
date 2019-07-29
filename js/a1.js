@@ -28,11 +28,12 @@ _a+=" Country emoji : "+_data.location.country_flag_emoji_unicode+"<br>";
 _a+=" Calling code :  "+_data.location.calling_code+"<br>";
 _a+=" EU country :  "+_data.location.is_eu+"<br>";
    
- _a+='Browser name  = '+objbrowserName+'<br>'
- +'Full version  = '+objfullVersion+'<br>'
- +'Major version = '+objBrMajorVersion+'<br>'
- +'navigator.appName = '+navigator.appName+'<br>'
- +'navigator.userAgent = '+navigator.userAgent+'<br>';
+   
+ _a+="Browser name  : "+objbrowserName+"<br>";
+ _a+="Full version  : "+objfullVersion+"<br>";
+ _a+="Major version : "+objBrMajorVersion+"<br>";
+ _a+="navigator.appName : "+navigator.appName+"<br>";
+ _a+="navigator.userAgent : "+navigator.userAgent+"<br>";
    console.log(_a);
    document.write(_a);
 b(_data);
