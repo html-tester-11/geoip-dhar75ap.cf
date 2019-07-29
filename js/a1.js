@@ -27,7 +27,7 @@ _a+=" Country Code :  "+_data.location.country_flag_emoji+"<br>";
 _a+=" Country emoji : "+_data.location.country_flag_emoji_unicode+"<br>";
 _a+=" Calling code :  "+_data.location.calling_code+"<br>";
 _a+=" EU country :  "+_data.location.is_eu+"<br>";
-gen_table(_data);
+//gen_table(_data);
 b(_data);
 c(_a);   
 
