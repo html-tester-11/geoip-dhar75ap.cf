@@ -26,7 +26,8 @@ _a+=" Language native :  "+_data.location.languages[_ab].native+"<br>";
 _a+=" Country Code :  "+_data.location.country_flag_emoji+"<br>";
 _a+=" Country emoji : "+_data.location.country_flag_emoji_unicode+"<br>";
 _a+=" Calling code :  "+_data.location.calling_code+"<br>";
-   if(_data.location.is_eu==='true')
+   
+   if(_data.location.is_eu.localeCompare('true')===0)
    {
 _a+=" EU country :  "+_data.location.is_eu+"<br>";
    }
