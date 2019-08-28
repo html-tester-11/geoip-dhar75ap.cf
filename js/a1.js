@@ -22,12 +22,14 @@ _a+=" Language :  "+_data.location.languages[_ab].name+"<br>";
 _a+=" Language Code :  "+_data.location.languages[_ab].code+"<br>";
 _a+=" Language native :  "+_data.location.languages[_ab].native+"<br>";
 }
-_a+=" Country flag :  "+_data.location.country_flag+"<br>";
+//_a+=" Country flag :  "+_data.location.country_flag+"<br>";
 _a+=" Country Code :  "+_data.location.country_flag_emoji+"<br>";
 _a+=" Country emoji : "+_data.location.country_flag_emoji_unicode+"<br>";
 _a+=" Calling code :  "+_data.location.calling_code+"<br>";
+   if(_data.location.is_eu==='true')
+   {
 _a+=" EU country :  "+_data.location.is_eu+"<br>";
-   
+   }
    
  _a+="Browser name  : "+objbrowserName+"<br>";
  _a+="Full version  : "+objfullVersion+"<br>";
