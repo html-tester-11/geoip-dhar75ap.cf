@@ -2,6 +2,7 @@
   {
 var _a,_ab=0;
 _a=" IP: "+_data.ip+"<br>";
+ _a="Host name "+_data.hostname+"<br>";
 _a+=" Ip version :  "+_data.type+"<br>";
 _a+=" Continent :  "+_data.continent_name+"<br>";
 _a+=" Continent Code :  "+_data.continent_code+"<br>";
