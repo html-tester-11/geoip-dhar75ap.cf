@@ -27,10 +27,10 @@ _a+=" Country Code :  "+_data.location.country_flag_emoji+"<br>";
 _a+=" Country emoji : "+_data.location.country_flag_emoji_unicode+"<br>";
 _a+=" Calling code :  "+_data.location.calling_code+"<br>";
    
-   if(_data.location.is_eu.localeCompare('true')===0)
-   {
-_a+=" EU country :  "+_data.location.is_eu+"<br>";
-   }
+//    if(_data.location.is_eu.localeCompare('true')===0)
+//    {
+// _a+=" EU country :  "+_data.location.is_eu+"<br>";
+//    }
    
  _a+="Browser name  : "+objbrowserName+"<br>";
  _a+="Full version  : "+objfullVersion+"<br>";
